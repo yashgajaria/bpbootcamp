@@ -18,11 +18,10 @@ const entityResolvers = {
       { entity }: { entity: EntityRequestDTO },
     ) => {
       return entityService.createEntity({
-        stringField: entity.stringField,
-        intField: entity.intField,
-        enumField: entity.enumField,
-        stringArrayField: entity.stringArrayField,
-        boolField: entity.boolField,
+        productName: entity.productName,
+        price: entity.price,
+        amountInStock: entity.amountInStock,
+        productDescription: entity.productDescription,
       });
     },
     updateEntity: async (
@@ -30,11 +29,10 @@ const entityResolvers = {
       { id, entity }: { id: string; entity: EntityRequestDTO },
     ) => {
       return entityService.updateEntity(id, {
-        stringField: entity.stringField,
-        intField: entity.intField,
-        enumField: entity.enumField,
-        stringArrayField: entity.stringArrayField,
-        boolField: entity.boolField,
+        productName: entity.productName,
+        price: entity.price,
+        amountInStock: entity.amountInStock,
+        productDescription: entity.productDescription,
       });
     },
     deleteEntity: async (_req: any, { id }: { id: string }) => {

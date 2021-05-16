@@ -22,11 +22,10 @@ class EntityService implements IEntityService {
 
     return {
       id: entity.id,
-      stringField: entity.stringField,
-      intField: entity.intField,
-      enumField: entity.enumField,
-      stringArrayField: entity.stringArrayField,
-      boolField: entity.boolField,
+      productName: entity.productName,
+      price: entity.price,
+      amountInStock: entity.amountInStock,
+      productDescription: entity.productDescription,
     };
   }
 
@@ -35,11 +34,10 @@ class EntityService implements IEntityService {
       const entities: Array<Entity> = await MgEntity.find();
       return entities.map((entity) => ({
         id: entity.id,
-        stringField: entity.stringField,
-        intField: entity.intField,
-        enumField: entity.enumField,
-        stringArrayField: entity.stringArrayField,
-        boolField: entity.boolField,
+        productName: entity.productName,
+        price: entity.price,
+        amountInStock: entity.amountInStock,
+        productDescription: entity.productDescription,
       }));
     } catch (error) {
       Logger.error(`Failed to get entities. Reason = ${error.message}`);
@@ -57,11 +55,10 @@ class EntityService implements IEntityService {
     }
     return {
       id: newEntity.id,
-      stringField: newEntity.stringField,
-      intField: newEntity.intField,
-      enumField: newEntity.enumField,
-      stringArrayField: newEntity.stringArrayField,
-      boolField: newEntity.boolField,
+      productName: newEntity.productName,
+      price: newEntity.price,
+      amountInStock: newEntity.amountInStock,
+      productDescription: newEntity.productDescription,
     };
   }
 
@@ -84,11 +81,10 @@ class EntityService implements IEntityService {
     }
     return {
       id: updatedEntity.id,
-      stringField: updatedEntity.stringField,
-      intField: updatedEntity.intField,
-      enumField: updatedEntity.enumField,
-      stringArrayField: updatedEntity.stringArrayField,
-      boolField: updatedEntity.boolField,
+      productName: updatedEntity.productName,
+      price: updatedEntity.price,
+      amountInStock: updatedEntity.amountInStock,
+      productDescription: updatedEntity.productDescription,
     };
   }
 

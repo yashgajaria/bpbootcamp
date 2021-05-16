@@ -1,18 +1,18 @@
 export interface EntityRequestDTO {
-  stringField: string;
-  intField: number;
-  enumField: string;
-  stringArrayField: string[];
-  boolField: boolean;
+  productName: string;
+  price: number;
+  amountInStock: number;
+  productDescription: string;
 }
+
+
 
 export interface EntityResponseDTO {
   id: string;
-  stringField: string;
-  intField: number;
-  enumField: string;
-  stringArrayField: string[];
-  boolField: boolean;
+  productName: string;
+  price: number;
+  amountInStock: number;
+  productDescription: string;
 }
 
 export interface IEntityService {

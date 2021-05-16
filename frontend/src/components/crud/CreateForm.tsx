@@ -10,41 +10,31 @@ const schema: JSONSchema7 = {
   description: "A simple form to test creating an entity",
   type: "object",
   required: [
-    "stringField",
-    "intField",
-    "stringArrayField",
-    "enumField",
-    "boolField",
+    "productName",
+    "price",
+    "amountInStock",
+    "productDescription",
   ],
   properties: {
-    stringField: {
+    productName: {
       type: "string",
-      title: "String Field",
+      title: "Product",
       default: "UW Blueprint",
     },
-    intField: {
+    price: {
       type: "integer",
-      title: "Integer Field",
+      title: "Price",
       default: 2017,
     },
-    stringArrayField: {
-      type: "array",
-      items: {
-        type: "string",
-      },
-      title: "String Array Field",
-      default: [],
+    amountInStock: {
+      type: "integer",
+      title: "Amount",
+      default: 2017,
     },
-    enumField: {
+    productDescription: {
       type: "string",
-      enum: ["A", "B", "C", "D"],
-      title: "Enum Field",
-      default: "A",
-    },
-    boolField: {
-      type: "boolean",
-      title: "Boolean Field",
-      default: true,
+      title: "Product Description",
+      default: "UW Blueprint",
     },
   },
 };
@@ -59,11 +49,10 @@ const CREATE_ENTITY = gql`
   mutation CreateForm_CreateEntity($entity: EntityRequestDTO!) {
     createEntity(entity: $entity) {
       id
-      stringField
-      intField
-      enumField
-      stringArrayField
-      boolField
+      productName
+      price
+      amountInStock
+      productDescription
     }
   }
 `;

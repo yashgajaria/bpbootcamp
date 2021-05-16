@@ -1,27 +1,18 @@
 import baseAPIClient from "./BaseAPIClient";
 
-enum EnumField {
-  "A",
-  "B",
-  "C",
-  "D",
-}
-
 type EntityRequest = {
-  stringField: string;
-  intField: number;
-  stringArrayField: string[];
-  enumField: EnumField;
-  boolField: boolean;
+  productName: string;
+  price: number;
+  amountInStock: number;
+  productDescription: string;
 };
 
 export type EntityResponse = {
   id: string | number;
-  stringField: string;
-  intField: number;
-  stringArrayField: string[];
-  enumField: EnumField;
-  boolField: boolean;
+  productName: string;
+  price: number;
+  amountInStock: number;
+  productDescription: string;
 };
 
 const create = async ({
