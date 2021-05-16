@@ -1,28 +1,20 @@
 import { gql } from "apollo-server-express";
 
 const entityType = gql`
-  enum Enum {
-    A
-    B
-    C
-    D
-  }
 
   type EntityResponseDTO {
     id: ID!
-    stringField: String!
-    intField: Int!
-    enumField: Enum!
-    stringArrayField: [String]!
-    boolField: Boolean!
+    productName: String!
+    price: Int!
+    amountInStock: Int!
+    productDescription: String!
   }
 
   input EntityRequestDTO {
-    stringField: String!
-    intField: Int!
-    enumField: Enum!
-    stringArrayField: [String]!
-    boolField: Boolean!
+    productName: String!
+    price: Int!
+    amountInStock: Int!
+    productDescription: String!
   }
 
   extend type Query {

@@ -11,11 +11,10 @@ type EntityData = Omit<EntityResponse, "boolField"> & { boolField: string };
 const convert = (entityReponse: EntityResponse) => {
   return {
     id: entityReponse.id,
-    stringField: entityReponse.stringField,
-    intField: entityReponse.intField,
-    stringArrayField: entityReponse.stringArrayField,
-    enumField: entityReponse.enumField,
-    boolField: entityReponse.boolField.toString(),
+    productName: entityReponse.productName,
+    price: entityReponse.price,
+    amountInStock: entityReponse.amountInStock,
+    productDescription: entityReponse.productDescription,
   };
 };
 
@@ -29,30 +28,25 @@ const DisplayTable = (props: any) => {
         accessor: "id", // accessor is the "key" in the data
       },
       {
-        Header: "stringField",
+        Header: "productName",
 
-        accessor: "stringField", // accessor is the "key" in the data
+        accessor: "productName", // accessor is the "key" in the data
       },
 
       {
-        Header: "integerField",
+        Header: "price",
 
-        accessor: "intField",
+        accessor: "price",
       },
       {
-        Header: "stringArrayField",
+        Header: "amountInStock",
 
-        accessor: "stringArrayField",
+        accessor: "amountInStock",
       },
       {
-        Header: "enumField",
+        Header: "productDescription",
 
-        accessor: "enumField",
-      },
-      {
-        Header: "boolField",
-
-        accessor: "boolField",
+        accessor: "productDescription",
       },
     ],
 
@@ -107,11 +101,10 @@ const ENTITIES = gql`
   query DisplayTableContainer_Entities {
     entities {
       id
-      stringField
-      intField
-      enumField
-      stringArrayField
-      boolField
+      productName
+      price
+      amountInStock
+      productDescription
     }
   }
 `;

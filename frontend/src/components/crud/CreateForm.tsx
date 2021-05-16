@@ -9,12 +9,7 @@ const schema: JSONSchema7 = {
   title: "Create Entity",
   description: "A simple form to test creating an entity",
   type: "object",
-  required: [
-    "productName",
-    "price",
-    "amountInStock",
-    "productDescription",
-  ],
+  required: ["productName", "price", "amountInStock", "productDescription"],
   properties: {
     productName: {
       type: "string",
@@ -69,12 +64,15 @@ const CreateForm = () => {
   }
 
   const onSubmit = async ({ formData }: { formData: any }) => {
+    console.log("submitting");
     const graphQLResult = await createEntity({
       variables: { entity: formData },
     });
+    console.log(graphQLResult);
     const result: EntityResponse | null =
       graphQLResult.data?.createEntity ?? null;
     setData(result);
+    console.log(result);
   };
   return <Form schema={schema} uiSchema={uiSchema} onSubmit={onSubmit} />;
 };
