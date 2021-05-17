@@ -6,30 +6,30 @@ import { gql, useMutation } from "@apollo/client";
 import { EntityResponse } from "../../APIClients/EntityAPIClient";
 
 const schema: JSONSchema7 = {
-  title: "Create Entity",
-  description: "A simple form to test creating an entity",
+  title: "Add freshly baked products",
+  description: "Post Products Online from this form",
   type: "object",
   required: ["productName", "price", "amountInStock", "productDescription"],
   properties: {
     productName: {
       type: "string",
       title: "Product",
-      default: "UW Blueprint",
+      default: "Bread",
     },
     price: {
       type: "integer",
       title: "Price",
-      default: 2017,
+      default: 5,
     },
     amountInStock: {
       type: "integer",
       title: "Amount",
-      default: 2017,
+      default: 100,
     },
     productDescription: {
       type: "string",
       title: "Product Description",
-      default: "UW Blueprint",
+      default: "Let's get this bread",
     },
   },
 };

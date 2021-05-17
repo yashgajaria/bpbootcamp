@@ -7,28 +7,28 @@ const CreateButton = () => {
 
   return (
     <button className="btn btn-primary" onClick={navigateTo} type="button">
-      Create Entity
+      Add Bread
     </button>
   );
 };
 
-const UpdateButton = () => {
-  const history = useHistory();
-  const navigateTo = () => history.push("/entity/update");
+// const UpdateButton = () => {
+//   const history = useHistory();
+//   const navigateTo = () => history.push("/entity/update");
 
-  return (
-    <button className="btn btn-primary" onClick={navigateTo} type="button">
-      Update Entity
-    </button>
-  );
-};
+//   return (
+//     <button className="btn btn-primary" onClick={navigateTo} type="button">
+//       Update Entity
+//     </button>
+//   );
+// };
 
 const GetButton = () => {
   const history = useHistory();
   const navigateTo = () => history.push("/entity");
   return (
     <button className="btn btn-primary" onClick={navigateTo} type="button">
-      Display Entities
+      Show Products
     </button>
   );
 };
@@ -36,10 +36,10 @@ const GetButton = () => {
 const Default = () => {
   return (
     <div style={{ textAlign: "center", paddingTop: "20px" }}>
-      <h1>Default Page</h1>
+      <h1>Toucan Sam&apos;s Bakery</h1>
       <div className="btn-group" style={{ paddingRight: "10px" }}>
         <CreateButton />
-        <UpdateButton />
+        {/* <UpdateButton /> */}
         <GetButton />
       </div>
     </div>

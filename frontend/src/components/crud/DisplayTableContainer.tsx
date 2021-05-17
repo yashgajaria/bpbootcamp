@@ -20,33 +20,51 @@ const convert = (entityReponse: EntityResponse) => {
 
 const DisplayTable = (props: any) => {
   const { data } = props;
+  const purchaseItem = () => {
+    console.log("BOUGHT ITEM");
+    window.alert("CONGRATS, YOU HAVE BOUGHT AN ITEM < INSERT ITEM NAME HERE> ");
+  };
   const columns = React.useMemo(
     () => [
-      {
-        Header: "id",
+      // {
+      //   Header: "id",
 
-        accessor: "id", // accessor is the "key" in the data
-      },
+      //   accessor: "id", // accessor is the "key" in the data
+      // },
       {
-        Header: "productName",
+        Header: "Name",
 
         accessor: "productName", // accessor is the "key" in the data
       },
 
       {
-        Header: "price",
+        Header: "$$$",
 
         accessor: "price",
       },
       {
-        Header: "amountInStock",
+        Header: "Stock",
 
         accessor: "amountInStock",
       },
       {
-        Header: "productDescription",
+        Header: "Description",
 
         accessor: "productDescription",
+      },
+      {
+        Header: "Purchase?",
+
+        accessor: "Purchase?",
+        Cell: () => (
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => purchaseItem()}
+          >
+            Buy
+          </button>
+        ),
       },
     ],
 
